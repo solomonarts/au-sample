@@ -1,0 +1,306 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Base colors - Corporate */
+    --background: 0 0% 98%;
+    --foreground: 220 15% 20%;
+
+    /* Card colors */
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 20%;
+
+    /* Popover colors */
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 20%;
+
+    /* Primary - Professional Dark Blue */
+    --primary: 220 25% 25%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Gold (Professional Yellow) */
+    --secondary: 45 90% 55%;
+    --secondary-foreground: 220 25% 25%;
+
+    /* Muted colors */
+    --muted: 220 15% 95%;
+    --muted-foreground: 220 10% 50%;
+
+    /* Accent - Professional Red */
+    --accent: 0 75% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Destructive colors */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border and input */
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 51 100% 50%;
+
+    /* Border radius */
+    --radius: 0.5rem;
+
+    /* Custom Uganda flag colors */
+    --uganda-black: 0 0% 0%;
+    --uganda-yellow: 51 100% 50%;
+    --uganda-red: 0 100% 40%;
+
+    /* Gradients - Corporate */
+    --gradient-hero: linear-gradient(135deg, hsl(220 25% 25% / 0.95), hsl(220 25% 35% / 0.9));
+    --gradient-cta: linear-gradient(135deg, hsl(45 90% 55%), hsl(40 85% 50%));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(220 15% 98%));
+
+    /* Shadows */
+    --shadow-lg: 0 10px 40px -10px hsl(0 0% 0% / 0.1);
+    --shadow-xl: 0 20px 60px -15px hsl(0 0% 0% / 0.15);
+    
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 20%;
+    --sidebar-primary: 0 0% 0%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 95%;
+    --sidebar-accent-foreground: 0 0% 0%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 51 100% 50%;
+  }
+
+  .dark {
+    --background: 0 0% 5%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 51 100% 50%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 0 100% 40%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 51 100% 50%;
+    --sidebar-background: 0 0% 8%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 51 100% 50%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 51 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .flag-overlay-uganda {
+    position: relative;
+  }
+
+  .flag-overlay-uganda::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      hsl(var(--uganda-black) / 0.05) 0%,
+      hsl(var(--uganda-yellow) / 0.05) 33%,
+      hsl(var(--uganda-red) / 0.05) 66%,
+      hsl(var(--uganda-black) / 0.05) 100%
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .text-gradient-yellow {
+    @apply bg-gradient-to-r from-secondary to-[hsl(40,85%,50%)] bg-clip-text text-transparent;
+  }
+
+  /* Uganda Flag Fadeout Backgrounds */
+  .flag-bg-uganda-left {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .flag-bg-uganda-left::before {
+    content: '';
+    position: absolute;
+    left: -100px;
+    top: 0;
+    bottom: 0;
+    width: 800px;
+    background-image: url('/src/assets/flag-uganda.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    mask-image: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.8) 30%,
+      rgba(0, 0, 0, 0.3) 60%,
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.8) 30%,
+      rgba(0, 0, 0, 0.3) 60%,
+      transparent 100%
+    );
+    transform: skewY(-2deg);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .flag-bg-uganda-right {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .flag-bg-uganda-right::before {
+    content: '';
+    position: absolute;
+    right: -100px;
+    top: 0;
+    bottom: 0;
+    width: 800px;
+    background-image: url('/src/assets/flag-uganda.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    mask-image: linear-gradient(
+      270deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.8) 30%,
+      rgba(0, 0, 0, 0.3) 60%,
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      270deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.8) 30%,
+      rgba(0, 0, 0, 0.3) 60%,
+      transparent 100%
+    );
+    transform: skewY(2deg);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* African Union Flag Fadeout */
+  .flag-bg-au-left {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .flag-bg-au-left::before {
+    content: '';
+    position: absolute;
+    left: -100px;
+    top: 0;
+    bottom: 0;
+    width: 800px;
+    background-image: url('/src/assets/flag-au.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    mask-image: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.8) 40%,
+      rgba(0, 0, 0, 0.3) 70%,
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.8) 40%,
+      rgba(0, 0, 0, 0.3) 70%,
+      transparent 100%
+    );
+    transform: skewY(2deg);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .flag-bg-au-right {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .flag-bg-au-right::before {
+    content: '';
+    position: absolute;
+    right: -100px;
+    top: 0;
+    bottom: 0;
+    width: 800px;
+    background-image: url('/src/assets/flag-au.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    mask-image: linear-gradient(
+      270deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.8) 40%,
+      rgba(0, 0, 0, 0.3) 70%,
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      270deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.8) 40%,
+      rgba(0, 0, 0, 0.3) 70%,
+      transparent 100%
+    );
+    transform: skewY(-2deg);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Event Poster Background */
+  .event-poster-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background-image: url('/src/assets/event-poster.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.12;
+    pointer-events: none;
+    mask-image: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0) 100%);
+    -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0) 100%);
+    z-index: 0;
+  }
+}
