@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Twitter, Facebook, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
+import { FaFacebook, FaXTwitter } from "react-icons/fa6";
 import { Button } from "@/components/ui/button";
 
 const twitterPosts = [
@@ -90,7 +91,7 @@ export const SocialFeed = () => {
             className="bg-card rounded-2xl p-6 shadow-lg border border-border"
           >
             <div className="flex items-center gap-3 pb-4 mb-6 border-b border-border">
-              <Twitter className="w-6 h-6 text-[#1DA1F2]" />
+              <FaXTwitter className="w-6 h-6 text-[#1DA1F2]" />
               <h4 className="text-xl font-bold text-foreground">Latest from X (Twitter)</h4>
             </div>
             
@@ -117,7 +118,7 @@ export const SocialFeed = () => {
             className="bg-card rounded-2xl p-6 shadow-lg border border-border"
           >
             <div className="flex items-center gap-3 pb-4 mb-6 border-b border-border">
-              <Facebook className="w-6 h-6 text-[#1877F2]" />
+              <FaFacebook className="w-6 h-6 text-[#1877F2]" />
               <h4 className="text-xl font-bold text-foreground">Facebook Updates</h4>
             </div>
             
@@ -163,15 +164,15 @@ export const SocialFeed = () => {
             className="mr-4 mb-4 md:mb-0"
             onClick={() => window.open("https://x.com/mtic_uganda", "_blank")}
           >
-            <Twitter className="mr-2 w-5 h-5" />
-            Follow #AIW2025 on X
+            <FaXTwitter className="mr-2 w-5 h-5" />
+            Follow on X
           </Button>
           <Button
             variant="outline"
             size="lg"
             onClick={() => window.open("https://facebook.com/mticuganda", "_blank")}
           >
-            <Facebook className="mr-2 w-5 h-5" />
+            <FaFacebook className="mr-2 w-5 h-5" />
             Follow on Facebook
           </Button>
         </div>
