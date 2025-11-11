@@ -66,7 +66,7 @@ const Index = () => {
             </p>
             
             <p className="text-lg md:text-xl text-primary-foreground font-semibold mb-8">
-              November 17-20, 2025 | Commonwealth Resort Munyonyo, Uganda
+              November 17-21, 2025 | Commonwealth Resort Munyonyo, Uganda
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -94,12 +94,12 @@ const Index = () => {
       {/* Statistics Section */}
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <StatCard 
               icon={Users}
               value={45.9}
               suffix="M"
-              label="Population Driving Growth"
+              label="Uganda's Total Population"
               delay={0.1}
             />
             <StatCard 
@@ -109,13 +109,13 @@ const Index = () => {
               label="Youth Workforce Ready"
               delay={0.2}
             />
-            <StatCard 
+            {/* <StatCard 
               icon={Zap}
               value={2051}
               suffix=" MW"
               label="Energy Surplus for Industry"
               delay={0.3}
-            />
+            /> */}
             <StatCard 
               icon={Building2}
               value={93.5}
@@ -160,10 +160,10 @@ const Index = () => {
               transition={{ duration: 0.6 }}
             >
               <h3 className="text-2xl font-bold mb-8 text-foreground">Manufacturing Composition</h3>
-              <ProgressBar label="Food & Beverages" percentage={77} delay={0.2} />
+              <ProgressBar label="Agro-processing" percentage={77} delay={0.2} />
               <ProgressBar label="Textiles" percentage={8} delay={0.4} />
               <ProgressBar label="Chemical Products" percentage={6} delay={0.6} />
-              <ProgressBar label="Metal Products" percentage={4} delay={0.8} />
+              <ProgressBar label="Iron & Steel" percentage={4} delay={0.8} />
             </motion.div>
 
             <motion.div

@@ -9,14 +9,14 @@ import unaLogo from "@/assets/partners/una-logo.png";
 import unbsLogo from "@/assets/partners/unbs-logo.png";
 
 const partners = [
-  { name: "African Women in Processing", url: "https://www.partner1website.com", logo: awipLogo },
-  { name: "The Uhuru Institute", url: "https://www.partner2website.com", logo: tuiLogo },
-  { name: "Uganda Development Corporation", url: "https://www.partner3website.com", logo: udcLogo },
-  { name: "UFZEPA", url: "https://www.partner4website.com", logo: ufzepaLogo },
-  { name: "Uganda Industrial Research Institute", url: "https://www.partner5website.com", logo: uiriLogo },
-  { name: "Uganda Manufacturers Association", url: "https://www.partner6website.com", logo: umaLogo },
-  { name: "United Nations Association of Uganda", url: "https://www.partner7website.com", logo: unaLogo },
-  { name: "Uganda National Bureau of Standards", url: "https://www.partner8website.com", logo: unbsLogo },
+  { name: "African Women in Processing", url: "https://awiparks.com/", logo: awipLogo },
+  { name: "The Uhuru Institute", url: "https://www.uhuruinstitute.org/", logo: tuiLogo },
+  { name: "Uganda Development Corporation", url: "https://www.udc.go.ug/", logo: udcLogo },
+  { name: "UFZEPA", url: "https://ufzepa.go.ug/", logo: ufzepaLogo },
+  { name: "Uganda Industrial Research Institute", url: "https://uiri.go.ug/", logo: uiriLogo },
+  { name: "Uganda Manufacturers Association", url: "https://uma.or.ug/", logo: umaLogo },
+  { name: "United Nations Association of Uganda", url: "https://unauganda.org/", logo: unaLogo },
+  { name: "Uganda National Bureau of Standards", url: "https://www.unbs.go.ug/", logo: unbsLogo },
 ];
 
 export const MicroPartners = () => {
